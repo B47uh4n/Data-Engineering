@@ -180,5 +180,5 @@ Azure Blob Storage, bulut tabanlı veri depolama ihtiyaçlarınızı karşılama
 
 
 # Faydalı Bağlantılar:
-https://awesomedataengineering.com/
-https://furkanalaybeg.medium.com/sqlde-view-yap%C4%B1s%C4%B1-50e3d90d4760
+- https://awesomedataengineering.com/
+- https://furkanalaybeg.medium.com/sqlde-view-yap%C4%B1s%C4%B1-50e3d90d4760
