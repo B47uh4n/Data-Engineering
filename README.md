@@ -150,8 +150,10 @@ Azure Synapse, Data Lake ile entegre çalışabilir. Veri gölü (data lake), ya
 
 
 # Azure Blob Storage Nedir?
-
-Azure Blob Storage, Microsoft'un bulut tabanlı nesne depolama hizmetidir. Blob Storage, büyük veri kümeleri, dosyalar, medya dosyaları ve diğer büyük veri nesnelerini depolamak için kullanılır. Blob, Binary Large Object'ın kısaltmasıdır ve genellikle büyük dosyaları veya veri kümelerini ifade eder.
+**Tanım:**
+- Azure Blob Storage, yapılandırılmamış veri depolamak için optimize edilmiş bir bulut depolama hizmetidir.
+- Temelde üç tür blob vardır: blok blobları (genel amaçlı veri depolama), append blobları (log verileri için) ve page blobları (sanal diskler için).
+- Blob, Binary Large Object'ın kısaltmasıdır ve genellikle büyük dosyaları veya veri kümelerini ifade eder.
 
 ## Ne İşe Yarar?
 
@@ -176,6 +178,69 @@ Azure Blob Storage, şu özellikleri sağlar:
 - **Uygun Maliyet**: Azure Blob Storage, kullanılan depolama miktarına göre ölçeklenebilir fiyatlandırma modeli sunar. Yalnızca kullandığınız depolama miktarı için ödersiniz, gereksiz maliyetlerden kaçınarak maliyetleri optimize edebilirsiniz.
 
 Azure Blob Storage, bulut tabanlı veri depolama ihtiyaçlarınızı karşılamak için güvenilir, ölçeklenebilir ve uygun maliyetli bir çözümdür. Bu sayede, verilerinizi güvenli bir şekilde depolayabilir, işleyebilir ve analiz edebilirsiniz.
+
+# Azure Blob Storage ve Azure Data Lake Arasındaki Farklar
+
+Azure Blob Storage ve Azure Data Lake, Microsoft Azure tarafından sunulan iki farklı bulut depolama çözümüdür. Her ikisi de büyük miktarda veri depolamak ve yönetmek için tasarlanmıştır, ancak kullanım amaçları ve sundukları özellikler açısından belirgin farklılıklar vardır.
+
+## Azure Blob Storage
+
+**Özellikler:**
+- Azure Blob Storage, yapılandırılmamış veri depolamak için optimize edilmiş bir bulut depolama hizmetidir.
+- Basit depolama çözümleri için idealdir.
+- Düşük maliyetli ve yüksek performanslıdır.
+- REST API ve çeşitli SDK'lar aracılığıyla erişilebilir.
+- Hot, Cool ve Archive gibi erişim katmanları sunar, bu da verinin erişim sıklığına göre maliyet optimizasyonu sağlar.
+
+**Kullanım Örneği:**
+- Web uygulamalarında resim, video gibi büyük medya dosyalarının depolanması.
+- Yedekleme ve arşivleme çözümleri.
+- Log verilerinin saklanması.
+
+## Azure Data Lake Storage (ADLS)
+
+**Tanım:**
+- Azure Data Lake Storage, büyük veri analitiği iş yüklerini desteklemek için optimize edilmiş bir bulut depolama hizmetidir.
+- Hadoop dağıtık dosya sistemi (HDFS) uyumlu bir dosya sistemi sağlar.
+
+**Özellikler:**
+- Büyük ölçekli analiz ve veri işleme iş yükleri için idealdir.
+- Hiyerarşik dosya sistemi (HFS) sunar, bu da dizinler ve dosyalar üzerinde daha ayrıntılı yönetim ve erişim kontrolü sağlar.
+- Azure Synapse Analytics, Azure Databricks ve diğer büyük veri analitik araçlarıyla sıkı entegrasyon.
+- Yüksek performanslı veri aktarımı ve yönetimi.
+
+**Kullanım Örneği:**
+- Büyük veri analitiği ve makine öğrenimi projeleri.
+- Kurumsal veri ambarı çözümleri.
+- IoT verilerinin toplanması ve analizi.
+
+## Farklar ve Kullanım Senaryoları
+
+### Yapılandırılmamış Veriler
+- **Blob Storage:** Büyük dosyaların (resim, video, yedekleme dosyaları) depolanması.
+  - **Örnek:** Bir e-ticaret sitesinin kullanıcı fotoğraflarını ve videolarını depolamak.
+
+### Büyük Veri Analitiği
+- **Data Lake Storage:** Büyük veri setlerinin analizi ve işlenmesi.
+  - **Örnek:** Bir telekom şirketinin günlük ağ trafiği verilerini analiz edip performans ve kullanıcı davranışlarını değerlendirmesi.
+
+### Dosya Sistemi Yönetimi
+- **Blob Storage:** Basit dosya depolama ve erişim.
+  - **Örnek:** Bir uygulama günlük dosyalarının saklanması.
+- **Data Lake Storage:** Hiyerarşik dosya sistemi ve ileri düzey erişim kontrolleri.
+  - **Örnek:** Büyük ölçekli bir finans kurumunun günlük işlem verilerini organize etmesi ve analiz etmesi.
+
+### Entegrasyon ve Performans
+- **Blob Storage:** Genel veri depolama ve çeşitli Azure hizmetleri ile entegrasyon.
+  - **Örnek:** Bir medya şirketinin video içeriklerini depolayıp dünya çapında kullanıcılarına sunması.
+- **Data Lake Storage:** Büyük veri işleme araçlarıyla entegrasyon ve yüksek performanslı veri işleme.
+  - **Örnek:** Bir sağlık kurumunun hastane verilerini analiz edip sağlık trendlerini değerlendirmesi.
+
+## Sonuç
+
+Azure Blob Storage ve Azure Data Lake Storage, farklı kullanım senaryolarına hitap eden iki depolama çözümüdür. Blob Storage, genel veri depolama için daha basit ve maliyet etkin bir çözümken, Data Lake Storage, büyük veri analitiği ve ileri düzey veri yönetimi gereksinimleri, data warehousing için daha uygun bir seçenektir. Detay olarak ise ADLS Gen2 Actual hierarchy folder structure kullanırken blob storage logical hiyerarşi kullanır yani
+ADLS aynı windows gibi explorer'a sahiptir ama blob storage logicaldır. ADLS Fine grained access controls sağlarken Blob storage resource level access control yapar. yani blob storage bir bütün gibi davranır.
+
 
 
 
