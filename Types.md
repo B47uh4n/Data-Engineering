@@ -1,3 +1,54 @@
+# Apache Parquet Nedir?
+
+Parquet, özellikle büyük veri analitiği için optimize edilmiş bir sütun tabanlı depolama formatıdır. Apache Parquet, Apache Hadoop ekosisteminde yaygın olarak kullanılır ve birçok büyük veri işleme araçları ve platformları tarafından desteklenir.
+
+## Parquet'in Özellikleri
+
+1. **Sütun Tabanlı Depolama:**
+   - Parquet, verileri sütunlar halinde depolar. Bu, özellikle belirli sütunlar üzerinde sorgulama yaparken performans avantajı sağlar.
+
+2. **Yüksek Sıkıştırma:**
+   - Sütun tabanlı depolama, benzer türdeki verilerin birlikte depolanmasına olanak tanır, bu da verinin sıkıştırılmasını daha etkili hale getirir.
+
+3. **Verimli Okuma:**
+   - Sadece ihtiyaç duyulan sütunlar okunur, bu da I/O maliyetlerini azaltır ve sorgu performansını artırır.
+
+4. **Veri Tipi Desteği:**
+   - Parquet, kompleks veri türlerini (nested data) destekler, yani iç içe geçmiş veri yapılarıyla çalışmak mümkündür.
+
+## Neden Parquet Kullanılır?
+
+- **Büyük Veri İşlemleri:**
+  - Parquet, büyük veri setlerini verimli bir şekilde depolamak ve işlemek için idealdir.
+- **Analitik Sorgular:**
+  - Analitik iş yükleri genellikle belirli sütunlar üzerinde yoğunlaşır. Parquet, bu tür sorgular için optimize edilmiştir.
+- **Sıkıştırma ve Depolama Verimliliği:**
+  - Parquet, yüksek sıkıştırma oranları sağlar, bu da depolama maliyetlerini düşürür.
+
+## Parquet Kullanım Alanları
+
+- **Veri Ambarları:**
+  - Veri ambarlarında büyük veri setlerinin depolanması ve analizi için yaygın olarak kullanılır.
+- **ETL (Extract, Transform, Load) İşlemleri:**
+  - Parquet dosyaları, veri entegrasyon süreçlerinde (ETL) yaygın olarak kullanılır.
+- **Apache Hadoop ve Apache Spark:**
+  - Hadoop ve Spark gibi büyük veri işleme araçları, Parquet formatını doğal olarak destekler.
+
+## Parquet ile Çalışmak
+
+Parquet dosyalarıyla çalışmak için birçok araç ve platform mevcuttur. Örneğin:
+
+- **Apache Spark:**
+  - `spark.read.parquet("path/to/parquet/file")` komutuyla Parquet dosyaları okunabilir.
+- **Pandas (Python Kütüphanesi):**
+  - `pandas.read_parquet("path/to/parquet/file")` komutuyla Parquet dosyaları okunabilir.
+- **Azure Synapse:**
+  - Azure Synapse Analytics, Parquet dosyalarını destekler ve bunları işlemek için kullanılabilir.
+
+## Özet
+
+Apache Parquet, sütun tabanlı bir depolama formatı olup, büyük veri analitiği ve işleme iş yükleri için optimize edilmiştir. Sütun tabanlı yapısı, yüksek sıkıştırma oranları ve verimli okuma performansı sunar. Parquet, veri ambarları, ETL işlemleri ve büyük veri işleme araçları tarafından yaygın olarak kullanılır.
+
 # Veritabanı Türleri ve Örnekleri
 
 ## 1. Sütun Tabanlı Veritabanı (Columnar Database)
