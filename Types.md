@@ -40,13 +40,10 @@ Grafik veritabanları, verileri düğümler ve kenarlar olarak temsil eder. Bu y
 - **Amazon Neptune:** AWS tarafından sunulan yönetilen bir grafik veritabanı hizmetidir. İlişkisel veri modelleri ve sorguları için optimize edilmiştir.
 - **ArangoDB:** Çok model destekli bir veritabanıdır. Hem grafik hem de diğer veri modellerini destekler.
 
-## Neden Bu Örnekler Seçildi?
-
-Bu örnekler, farklı veritabanı türlerinin pratikte nasıl kullanıldığını göstermek için seçildi. Her bir veritabanı türünün avantajlarını ve kullanım alanlarını anlamak için, bu türleri uygulayan popüler veritabanı sistemlerine bakmak faydalı olabilir. 
+## Özet
 
 - **Sütun tabanlı veritabanları**, veri analitiği ve raporlama iş yükleri için optimize edilmiştir ve genellikle veri ambarı çözümlerinde kullanılır.
 - **Satır tabanlı veritabanları**, OLTP uygulamaları için uygundur ve geleneksel iş uygulamalarında yaygın olarak kullanılır.
 - **NoSQL veritabanları**, esneklik ve ölçeklenebilirlik gerektiren büyük veri uygulamaları için idealdir.
 - **Grafik veritabanları**, karmaşık ilişkisel verileri yönetmek ve analiz etmek için kullanılır.
 
-Bu örnekler, bu veritabanı türlerinin pratik uygulamalarını ve belirli senaryolarda nasıl kullanıldıklarını anlamaya yardımcı olur.
