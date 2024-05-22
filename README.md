@@ -238,8 +238,48 @@ Azure Blob Storage ve Azure Data Lake, Microsoft Azure tarafından sunulan iki f
 
 ## Sonuç
 
-Azure Blob Storage ve Azure Data Lake Storage, farklı kullanım senaryolarına hitap eden iki depolama çözümüdür. Blob Storage, genel veri depolama için daha basit ve maliyet etkin bir çözümken, Data Lake Storage, büyük veri analitiği ve ileri düzey veri yönetimi gereksinimleri, data warehousing için daha uygun bir seçenektir. Detay olarak ise ADLS Gen2 Actual hierarchy folder structure kullanırken blob storage logical hiyerarşi kullanır yani
-ADLS aynı windows gibi explorer'a sahiptir ama blob storage logicaldır. ADLS Fine grained access controls sağlarken Blob storage resource level access control yapar. yani blob storage bir bütün gibi davranır.
+Azure Blob Storage ve Azure Data Lake Storage, farklı kullanım senaryolarına hitap eden iki depolama çözümüdür. Blob Storage, genel veri depolama için daha basit ve maliyet etkin bir çözümken, Data Lake Storage, büyük veri analitiği ve ileri düzey veri yönetimi gereksinimleri, data warehousing için daha uygun bir seçenektir. 
+-Detay olarak bakarsak ADLS Gen2 Actual hierarchy folder structure kullanırken blob storage logical hiyerarşi kullanır yani
+ADLS aynı windows gibi explorer'a sahiptir ama blob storage logicaldır. ADLS Fine grained access controls sağlarken Blob storage resource level access control yapar. yani blob storage bir bütün gibi davranır. 
+- ADLS'ın Hadoop dağıtık dosya sistemi (HDFS) uyumlu bir dosya sistemi sağlaması da analiz yeteneğini arttırır. NTFS gibi bir dosya sistemi olan Hadoop için:
+- 
+  # Hadoop Dağıtık Dosya Sistemi (HDFS) Nedir?
+
+Hadoop Dağıtık Dosya Sistemi (HDFS), büyük veri setlerini depolamak ve işlemek için geliştirilmiş, açık kaynaklı bir dosya sistemidir. HDFS, veri depolama ve yönetiminde yüksek güvenilirlik ve ölçeklenebilirlik sağlar. İşte HDFS'in temel özellikleri:
+
+- **Dağıtılmış Yapı:** HDFS, verileri birden fazla sunucuya dağıtarak depolar. Bu, büyük veri setlerinin yönetimini kolaylaştırır ve verinin hızlı bir şekilde işlenmesine olanak tanır.
+- **Yüksek Güvenilirlik:** Veriler, HDFS üzerinde bloklar halinde depolanır ve her blok birden fazla kopya ile çoğaltılır. Bu sayede, herhangi bir sunucu arızasında verilerin kaybolma riski minimize edilir.
+- **Yüksek Ölçeklenebilirlik:** HDFS, çok büyük veri setlerini (petabayt seviyesinde) depolamak ve yönetmek için tasarlanmıştır. Sistem, veri ve işlem yükü arttıkça kolayca ölçeklenebilir.
+- **Büyük Dosyalar İçin Optimize Edilmiştir:** HDFS, büyük dosyaları depolamak için optimize edilmiştir ve özellikle büyük veri analitiği ve işleme iş yükleri için uygundur.
+
+## Azure Data Lake'in HDFS ile Uyumluluğu Ne Anlama Geliyor?
+
+Azure Data Lake Storage (ADLS), HDFS uyumlu bir dosya sistemi sunar. Bu uyumluluk, birkaç önemli avantaj sağlar:
+
+### Mevcut Hadoop Ekosistem Araçları ile Entegrasyon:
+
+- Azure Data Lake, HDFS uyumluluğu sayesinde Hadoop ekosistemindeki araçlar (örneğin, Apache Spark, Hive, HBase) ile sorunsuz bir şekilde çalışabilir.
+- Veri analisti ve mühendisler, mevcut Hadoop tabanlı iş akışlarını ve araçlarını Azure Data Lake üzerinde kullanmaya devam edebilirler.
+
+### Veri İşleme ve Analiz İş Yükleri İçin Optimize Edilmiştir:
+
+- Büyük veri setlerinin analizi ve işlenmesi için Azure Data Lake, HDFS uyumluluğu sayesinde yüksek performans ve ölçeklenebilirlik sunar.
+- Büyük veri analitiği, makine öğrenimi ve veri ambarı iş yükleri için ideal bir çözümdür.
+
+### Kapsamlı Dosya Sistemi Özellikleri:
+
+- Hiyerarşik dosya sistemi (HFS) sayesinde, dizinler ve dosyalar üzerinde daha ayrıntılı yönetim ve erişim kontrolleri sağlar.
+- Bu özellik, karmaşık veri organizasyon yapıları ve güvenlik gereksinimleri olan büyük ölçekli projeler için önemlidir.
+
+### Kurumsal Düzeyde Güvenlik ve Yönetim:
+
+- Azure Data Lake, HDFS uyumluluğuna ek olarak Azure'ın sunduğu kurumsal düzeyde güvenlik, uyumluluk ve yönetim özelliklerinden faydalanır.
+- Rol tabanlı erişim kontrolü (RBAC), veri şifreleme, denetim günlükleri gibi gelişmiş güvenlik ve yönetim özellikleri sunar.
+
+## Özet
+
+HDFS, büyük veri setlerinin yönetimi ve analizi için geliştirilmiş bir dosya sistemi olup, yüksek güvenilirlik ve ölçeklenebilirlik sağlar. Azure Data Lake'in HDFS uyumlu olması, mevcut Hadoop araçlarının ve iş akışlarının sorunsuz bir şekilde Azure ortamında kullanılabilmesine olanak tanır. Bu, büyük veri işleme ve analizi projeleri için hem esneklik hem de güçlü performans sağlar.
+
 
 
 
