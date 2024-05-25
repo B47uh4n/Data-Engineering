@@ -1,3 +1,75 @@
+# Veritabanı Türleri ve Örnekleri (1 numaralı video linki)
+
+## Satır Tabanlı Veri Tablosu (Row-Based Database)
+
+Satır tabanlı veri tablolarında veriler satırlar halinde saklanır. Her bir satır, bir veri kaydını temsil eder ve tüm sütun değerleri bir arada tutulur. Bu yapı özellikle OLTP (Online Transaction Processing) uygulamaları için uygundur, çünkü veri ekleme, güncelleme ve silme işlemleri hızlıdır.
+
+#### Örnek:
+
+| ID  | İsim     | Yaş | Şehir     |
+|-----|----------|-----|-----------|
+| 1   | Ahmet    | 25  | İstanbul  |
+| 2   | Ayşe     | 30  | Ankara    |
+| 3   | Mehmet   | 22  | İzmir     |
+
+Yukarıdaki tabloda, her satır bir kişinin bilgilerini içerir ve bir kaydı temsil eder.
+
+## Sütun Tabanlı Veritabanı (Columnar Database)
+
+**Açıklama:**
+Sütun tabanlı veritabanları, verileri satırlar yerine sütunlar halinde depolar. Her bir sütun, aynı türdeki verileri bir arada tutar. Bu yapı, veri analitiği, OLAP (Online Analytical Processing) ve veri ambarı (data warehouse) uygulamaları için uygundur, çünkü belirli sütunlar üzerinde yapılan sorgulamalar daha hızlıdır. Her sütun, o sütunun tüm değerlerini içerir. Ancak, bunu tablodaki satırlar ve sütunlar şeklinde görselleştirmek biraz zor olabilir çünkü genellikle fiziksel depolama yapısını ifade eder.
+
+#### Örnek:
+
+Sütun tabanlı veriyi göstermek için, her sütunun ayrı ayrı saklandığını hayal edebiliriz:
+
+**ID Sütunu:**
+- 1, 2, 3
+
+**İsim Sütunu:**
+- Ahmet, Ayşe, Mehmet gibi.
+
+Bu formatta, her sütun birbirinden bağımsız olarak saklanır. Bu yüzden belirli bir sütun üzerinde yapılan sorgulamalar daha hızlı olabilir çünkü sadece o sütun belleğe yüklenir ve işlenir. Örneğin, yaş ortalamasını hesaplamak istediğinizde, sadece "Yaş" sütununa erişmeniz yeterlidir.
+
+### Kısa Karşılaştırma:
+
+- **Satır Tabanlı:**
+  - Avantaj: Hızlı veri ekleme, güncelleme ve silme.
+  - Dezavantaj: Büyük veri setlerinde analiz ve raporlama performansı daha düşüktür.
+- **Sütun Tabanlı:**
+  - Avantaj: Veri analizi ve raporlama için daha hızlı sorgulama.
+  - Dezavantaj: Veri ekleme ve güncelleme işlemleri daha karmaşık ve yavaştır.
+
+Bu farklar, hangi veri tabanı modelinin kullanılacağına karar verirken önemli rol oynar ve uygulamanın ihtiyaçlarına göre seçilmelidir.
+
+
+## 3. NoSQL Veritabanı
+
+**Açıklama:**
+NoSQL veritabanları, yapılandırılmamış veya yarı yapılandırılmış verileri depolamak için kullanılır. Genellikle büyük veri ve yüksek performans gerektiren uygulamalar için tercih edilir.
+
+**Örnekler:**
+- **MongoDB:** Belge tabanlı bir NoSQL veritabanıdır. JSON benzeri belgeler kullanarak esnek veri modeli sağlar.
+- **Redis:** Anahtar-değer tabanlı bir NoSQL veritabanıdır. Yüksek hızlı veri erişimi gereksinimleri için kullanılır.
+- **Neo4j:** Grafik tabanlı bir NoSQL veritabanıdır. Karmaşık ilişkileri ve bağlantıları yönetmek için optimize edilmiştir.
+
+## 4. Grafik Veritabanı (Graph Database)
+
+**Açıklama:**
+Grafik veritabanları, verileri düğümler ve kenarlar olarak temsil eder. Bu yapı, özellikle ilişkisel verilerin yönetimi ve analizi için uygundur.
+
+**Örnekler:**
+- **Neo4j:** Popüler bir grafik veritabanıdır. Sosyal ağ analizleri, öneri sistemleri ve dolandırıcılık tespiti gibi uygulamalarda kullanılır.
+- **Amazon Neptune:** AWS tarafından sunulan yönetilen bir grafik veritabanı hizmetidir. İlişkisel veri modelleri ve sorguları için optimize edilmiştir.
+- **ArangoDB:** Çok model destekli bir veritabanıdır. Hem grafik hem de diğer veri modellerini destekler.
+
+## Özet
+
+- **Sütun tabanlı veritabanları**, veri analitiği ve raporlama iş yükleri için optimize edilmiştir ve genellikle veri ambarı çözümlerinde kullanılır.
+- **Satır tabanlı veritabanları**, OLTP uygulamaları için uygundur ve geleneksel iş uygulamalarında yaygın olarak kullanılır.
+- **NoSQL veritabanları**, esneklik ve ölçeklenebilirlik gerektiren büyük veri uygulamaları için idealdir.
+- **Grafik veritabanları**, karmaşık ilişkisel verileri yönetmek ve analiz etmek için kullanılır.
+
 # Apache Parquet Nedir?
 
 Parquet, özellikle büyük veri analitiği için optimize edilmiş bir sütun tabanlı depolama formatıdır. Apache Parquet, Apache Hadoop ekosisteminde yaygın olarak kullanılır ve birçok büyük veri işleme araçları ve platformları tarafından desteklenir.
@@ -49,52 +121,5 @@ Parquet dosyalarıyla çalışmak için birçok araç ve platform mevcuttur. Ör
 
 Apache Parquet, sütun tabanlı bir depolama formatı olup, büyük veri analitiği ve işleme iş yükleri için optimize edilmiştir. Sütun tabanlı yapısı, yüksek sıkıştırma oranları ve verimli okuma performansı sunar. Parquet, veri ambarları, ETL işlemleri ve büyük veri işleme araçları tarafından yaygın olarak kullanılır.
 
-# Veritabanı Türleri ve Örnekleri
-
-## 1. Sütun Tabanlı Veritabanı (Columnar Database)
-
-**Açıklama:**
-Sütun tabanlı veritabanları, verileri satırlar yerine sütunlar halinde depolar. Bu yapı, veri analitiği ve veri ambarı işlemleri için optimize edilmiştir.
-
-**Örnekler:**
-- **Amazon Redshift:** Bu, Amazon Web Services (AWS) üzerinde çalışan sütun tabanlı bir veri ambarı hizmetidir. Büyük veri analitiği ve raporlama için kullanılır.
-- **Google BigQuery:** Google Cloud Platform (GCP) üzerinde çalışan sütun tabanlı bir veri ambarı hizmetidir. Büyük veri analizi ve makine öğrenimi işlemleri için optimize edilmiştir.
-- **Apache Cassandra:** Açık kaynaklı, dağıtık bir veritabanı sistemi olup sütun tabanlı veri modeli kullanır. Büyük ölçekli veri yönetimi ve yüksek kullanılabilirlik gereksinimleri için uygundur.
-
-## 2. Satır Tabanlı Veritabanı (Row-based Database)
-
-**Açıklama:**
-Satır tabanlı veritabanları, verileri satırlar halinde depolar ve genellikle OLTP (Online Transaction Processing) uygulamaları için kullanılır.
-
-**Örnekler:**
-- **MySQL:** Açık kaynaklı, satır tabanlı bir ilişkisel veritabanı yönetim sistemi (RDBMS). Web uygulamaları ve çeşitli iş uygulamaları için yaygın olarak kullanılır.
-- **PostgreSQL:** Açık kaynaklı, gelişmiş bir RDBMS. Geniş özellik seti ve esneklik sunar.
-- **Microsoft SQL Server:** Microsoft tarafından geliştirilen, kurumsal düzeyde bir RDBMS. Büyük ölçekli kurumsal uygulamalar için kullanılır.
-
-## 3. NoSQL Veritabanı
-
-**Açıklama:**
-NoSQL veritabanları, yapılandırılmamış veya yarı yapılandırılmış verileri depolamak için kullanılır. Genellikle büyük veri ve yüksek performans gerektiren uygulamalar için tercih edilir.
-
-**Örnekler:**
-- **MongoDB:** Belge tabanlı bir NoSQL veritabanıdır. JSON benzeri belgeler kullanarak esnek veri modeli sağlar.
-- **Redis:** Anahtar-değer tabanlı bir NoSQL veritabanıdır. Yüksek hızlı veri erişimi gereksinimleri için kullanılır.
-- **Neo4j:** Grafik tabanlı bir NoSQL veritabanıdır. Karmaşık ilişkileri ve bağlantıları yönetmek için optimize edilmiştir.
-
-## 4. Grafik Veritabanı (Graph Database)
-
-**Açıklama:**
-Grafik veritabanları, verileri düğümler ve kenarlar olarak temsil eder. Bu yapı, özellikle ilişkisel verilerin yönetimi ve analizi için uygundur.
-
-**Örnekler:**
-- **Neo4j:** Popüler bir grafik veritabanıdır. Sosyal ağ analizleri, öneri sistemleri ve dolandırıcılık tespiti gibi uygulamalarda kullanılır.
-- **Amazon Neptune:** AWS tarafından sunulan yönetilen bir grafik veritabanı hizmetidir. İlişkisel veri modelleri ve sorguları için optimize edilmiştir.
-- **ArangoDB:** Çok model destekli bir veritabanıdır. Hem grafik hem de diğer veri modellerini destekler.
-
-## Özet
-
-- **Sütun tabanlı veritabanları**, veri analitiği ve raporlama iş yükleri için optimize edilmiştir ve genellikle veri ambarı çözümlerinde kullanılır.
-- **Satır tabanlı veritabanları**, OLTP uygulamaları için uygundur ve geleneksel iş uygulamalarında yaygın olarak kullanılır.
-- **NoSQL veritabanları**, esneklik ve ölçeklenebilirlik gerektiren büyük veri uygulamaları için idealdir.
-- **Grafik veritabanları**, karmaşık ilişkisel verileri yönetmek ve analiz etmek için kullanılır.
-
+## Faydalı Bağlantılar
+https://www.youtube.com/watch?v=8KGVFB3kVHQ (1)
