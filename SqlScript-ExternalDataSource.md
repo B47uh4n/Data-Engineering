@@ -1,3 +1,4 @@
+'''sql
 Use demoDB -- serverless sql pool'umuz ile oluşturduğumuz LDW'nin adı
 GO
 -- credentials'ı koruyacak master keyi oluşturuyoruz
@@ -16,3 +17,4 @@ WITH (
     LOCATION = 'primary endpoint adresimiz',
     CREDENTIAL = testCredential
 )
+'''
