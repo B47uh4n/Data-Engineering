@@ -24,4 +24,4 @@ CREATE DATABASE SCOPED CREDENTIAL ManagedIdentity
 WITH IDENTITY = 'Managed Identity'
 GO
 ```
--- şeklinde bir kullanım da yapabilirdik. Eğer managed identitymizin data source oluşturmak istediğimiz lokasyondaki adsl'e erişimi varsa genelde bu yöntem kullanılıyormuş.
+- şeklinde bir kullanım da yapabilirdik. Eğer managed identitymizin data source oluşturmak istediğimiz lokasyondaki adsl'e erişimi varsa genelde bu yöntem kullanılıyormuş. (16v-8.d)
