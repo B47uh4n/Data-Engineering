@@ -29,4 +29,3 @@ WITH(
 }
 ```
 
-https://www.youtube.com/watch?v=t7iLD6Cgv-I&list=PLMWaZteqtEaIZxPCw_0AO1GsqESq3hZc6&index=15&pp=iAQB
